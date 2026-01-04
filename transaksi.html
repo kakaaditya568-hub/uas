@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Transaksi - Smart Rental</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="transaction-page">
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="beranda.html">🚗 Smart Rental</a>
+        <div class="ms-auto">
+            <a href="beranda.html" class="btn btn-light btn-sm">Beranda</a>
+            <a href="profil.html" class="btn btn-light btn-sm">Profil</a>
+            <a href="login.html" class="btn btn-danger btn-sm">Logout</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HEADER -->
+<section class="transaction-header text-white text-center">
+    <div class="container">
+        <h1 class="fw-bold">Transaksi Penyewaan</h1>
+        <p class="lead">Kelola data penyewaan mobil dengan mudah</p>
+    </div>
+</section>
+
+<!-- CONTENT -->
+<div class="container my-5">
+
+    <div class="row g-4">
+
+        <!-- FORM TRANSAKSI -->
+        <div class="col-md-5">
+            <div class="card shadow-sm transaction-card">
+                <div class="card-body">
+                    <h4 class="fw-bold mb-3">Form Sewa Mobil</h4>
+
+                    <form id="rentForm">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Nama Penyewa</label>
+                            <input type="text" id="custName" class="form-control" placeholder="Masukkan nama">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Jenis Mobil</label>
+                            <select id="carType" class="form-select">
+                                <option value="">Pilih Mobil</option>
+                                <option>Avanza (SUV)</option>
+                                <option>Alphard (Luxury)</option>
+                                <option>Brio (City Car)</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Jumlah Hari</label>
+                            <input type="number" id="rentDays" class="form-control" placeholder="Contoh: 3">
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">Tanggal Mulai</label>
+                            <input type="date" id="rentDate" class="form-control">
+                        </div>
+
+                        <button type="button" class="btn btn-success w-100" onclick="validateAndAdd()">
+                            Simpan Transaksi
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- TABEL TRANSAKSI -->
+        <div class="col-md-7">
+            <div class="card shadow-sm transaction-card">
+                <div class="card-body">
+                    <h4 class="fw-bold mb-3">Daftar Transaksi</h4>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th>Nama</th>
+                                    <th>Mobil</th>
+                                    <th>Hari</th>
+                                    <th>Tanggal</th>
+                                </tr>
+                            </thead>
+                            <tbody id="transactionList">
+                                <!-- Data otomatis masuk -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white text-center py-3 mt-5">
+    <small>© 2026 Smart Rental | Sistem Rental Mobil</small>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
