@@ -15,6 +15,7 @@
         <div class="ms-auto">
             <a href="beranda.html" class="btn btn-light btn-sm">Beranda</a>
             <a href="profil.html" class="btn btn-light btn-sm">Profil</a>
+            <a href="transaksi.html" class="btn btn-light btn-sm">Transaksi</a>
             <a href="login.html" class="btn btn-danger btn-sm">Logout</a>
         </div>
     </div>
@@ -110,5 +111,43 @@
 </footer>
 
 <script src="js/script.js"></script>
+<script>
+    function validateAndAdd() {
+    // Ambil nilai dari input
+    const nama = document.getElementById("custName").value.trim();
+    const mobil = document.getElementById("carType").value;
+    const hari = document.getElementById("rentDays").value;
+    const tanggal = document.getElementById("rentDate").value;
+
+    // Validasi input
+    if (nama === "" || mobil === "" || hari === "" || tanggal === "") {
+        alert("Semua field wajib diisi!");
+        return;
+    }
+
+    // Ambil tbody tabel
+    const tableBody = document.getElementById("transactionList");
+
+    // Buat baris baru
+    const row = document.createElement("tr");
+
+    row.innerHTML = `
+        <td>${nama}</td>
+        <td>${mobil}</td>
+        <td>${hari} Hari</td>
+        <td>${tanggal}</td>
+    `;
+
+    // Masukkan baris ke tabel
+    tableBody.appendChild(row);
+
+    // Reset form
+    document.getElementById("rentForm").reset();
+
+    // Notifikasi
+    alert("Data transaksi berhasil ditambahkan!");
+}
+
+</script>
 </body>
 </html>

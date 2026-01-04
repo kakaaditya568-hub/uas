@@ -105,3 +105,103 @@ body {
 .navbar {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
+/* =============================
+   GLOBAL
+============================= */
+body {
+    background: linear-gradient(135deg, #f4f7fb, #e9eef5);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* =============================
+   NAVBAR
+============================= */
+.navbar {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.navbar .btn {
+    transition: all 0.3s ease;
+}
+
+.navbar .btn:hover {
+    transform: translateY(-2px);
+}
+
+/* =============================
+   PROFILE CARD
+============================= */
+.card {
+    border: none;
+    border-radius: 18px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Aksen garis atas */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, #0d6efd, #6610f2);
+}
+
+/* =============================
+   TEXT STYLING
+============================= */
+.card h3 {
+    font-weight: 700;
+    color: #0d6efd;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.card hr {
+    border-top: 1px dashed #ddd;
+}
+
+/* =============================
+   IDENTITY SECTION
+============================= */
+.card strong {
+    color: #333;
+}
+
+.card p:last-child {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 15px;
+}
+
+/* =============================
+   HOVER EFFECT
+============================= */
+.card:hover {
+    transform: translateY(-6px);
+    transition: all 0.3s ease;
+}
+
+/* =============================
+   RESPONSIVE
+============================= */
+@media (max-width: 576px) {
+    .card {
+        padding: 20px;
+    }
+}
